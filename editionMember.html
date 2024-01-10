@@ -1,0 +1,75 @@
+<link rel="stylesheet" href="style.css">
+
+<nav class="navbar">
+    <img src="images/logo.png"width="100px";height="100px;">
+    <h1>Library Management System</h1>
+    <button><a href="index.html">Back</a></button>
+</nav>
+
+<div class="additem">
+    <form>
+        <table class="initems">
+            <tr>
+                <td><h2>Name :</h2></td> <td><input type="text"></td>
+            </tr>
+            <tr>
+                <td><h2>Department :</h2></td> <td><input type="text"></td>
+            </tr>
+            <tr>
+                <td><h2>Signature:</h2></td> <td><input type="text"></td>
+            </tr>
+            
+            <tr>
+                <td><h2></h2></td> <td><button class="addSave">Edit</button></td>
+            </tr>
+    
+    
+    
+</table>
+</form>
+</div>
+<style>
+    .additem{
+        text-align: center;
+        margin-left: 600px;
+        margin-top: 150px;
+        
+    }
+    .initems{
+        font-size: 23px;
+        color:rgb(226, 43, 223);
+        border: 2px solid black;
+        background-color: rgb(142, 235, 135);
+        border-radius: 20px;
+        padding:10px;
+        height:400px;
+        width: 600px;
+        padding-left: 15px;
+    }
+    .initems td{
+        padding-left: 15px;
+    }
+    .addSave{
+    margin:10px;
+    border:2px solid black;
+    border-radius: 10px;
+    padding:15px;
+    margin-top: 15px;
+    width: fit-content;
+    cursor: pointer;
+    font-size: medium;
+    font-weight: bold;
+    margin-bottom: -10px;
+    margin-left: 200px;
+}
+.addSave:hover{
+    background-color:rgb(128, 34, 0);
+}
+    
+</style>
+<script>
+    var addSave=document.querySelector(".addSave")
+    addSave.addEventListener("click",function(){
+       alert("Edited successfully")
+    })
+</script>

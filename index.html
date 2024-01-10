@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Libary management system</title>
+    <link rel="stylesheet"href="style.css">
+  </head>
+<body>
+    <div class="nav">
+        <img src="images/logo.png">
+        <h1>Library management</h1>
+        <button id="btn">sign in</button>
+    </div>
+    <hr>
+    <div class="overlay"></div>
+    <div class="popup hidden">
+        <h3>Username :</h3>
+        <input type="text">
+        <h3>Email</h3>
+        <input type="text">
+        <h3>Password :</h3>
+        <input type="text">
+        <button class="close">Sign In</button>
+    </div>
+    <div class="Search">
+      <img src="images/openLibrary.png">
+    
+     <a href="search.html"><img src="images/search (1).png" width="60px;"></a>
+     
+    
+
+    <select id="browseDropdown" onchange="navigateToPage()">
+      <option value="Browse" selected disabled hidden > Browse</option>
+      <option value="Subject.html">Subjects</option>
+      <option value="Advanced.html">Advanced search</option>
+
+
+    </select>
+  
+    </div>
+  
+    <div class="Member">
+    <h1>Member Details</h1>
+</div>
+ <div class="mem">
+        <h2><a href="memberList.html">Members list ➡️</a></h2>
+        <h2><a href="addMember.html">Add member ➡️ </a></h2>
+        <h2><a href="removeMember.html">Remove member ➡️</a></h2>
+        <h2><a href="editMember.html">Edit member ➡️</a></h2>
+        
+</div>
+
+<div class="Book">
+    <h1>Book management</h1>
+</div>
+<div class="Book1">
+    <h2><a href="bookList.html">List of all Books</a></h2>
+    <h2><a href="addBook.html">Add New Book</a></h2>
+    <h2><a href="deleteBook.html">Delete Book</a></h2>
+    <h2><a href="editBook.html">Edit Book Details</a></h2> 
+</div>
+<div class="Issuing_details">
+    <h1>Book Issuing Details</h1>
+    <div class="Issue"><h3><a href="issue.html">Issue a Book</h3></a></div>
+    <div class="Return"><h3><a href="return.html">Return an Issued Book</h3></a></div>
+</div>
+    
+
+
+<script>
+    var popup= document.querySelector(".popup")
+    var btn=document.getElementById("btn")
+    var close=document.querySelector(".close")
+    var overlay=document.querySelector(".overlay")
+
+
+    btn.addEventListener("click",function(){
+        popup.classList.remove("hidden")
+        overlay.style.display="block"
+    })
+    close.addEventListener("click",function(){
+        popup.classList.add("hidden")
+        overlay.style.display="none"
+    })
+    
+    
+var data = [
+  ["1", "Kaviya", "1","Life in woods","01.01.2024","15.01.2024"],
+  ["2", "Kavin", "2", "Harry potter","05.01.2024","21.01.2024"],
+  ["3", "Sathish", "3","A monk who sold his ferrari","04.01.2024","19.01.2024"],
+  ["4", "Kiruthika", "4", "Happy family","01.01.2024","15.01.2024"],
+  ["5", "Kamali", "5","Arabian Nights","01.01.2024","15.01.2024"],
+  ["6", "Nandhini", "6", "Moral stories","03.01.2024","18.01.2024"],
+  ["7", "Subha", "7","How to be a Millionaire","06.01.2024","21.01.2024"],
+  ["8", "Lokesh", "8", "Software solutions","07.01.2024","12.01.2024"],
+  ["9", "Prakash", "9","Microbiology","09.01.2024","23.01.2024"],
+  ["10", "Jaisha", "10", "Embedded systems","11.01.2024","26.01.2024"],
+  
+];
+
+var tableBody = document.getElementById('tableBody');
+
+for (var i = 0; i < data.length; i++) {
+  var row = tableBody.insertRow(i);
+for (var j = 0; j < data[i].length; j++) {
+    var cell = row.insertCell(j);
+    cell.innerHTML = data[i][j];
+  }
+}
+function navigateToPage() {
+      var dropdown = document.getElementById("browseDropdown");
+      var selectedOption = dropdown.options[dropdown.selectedIndex].value;
+
+      if (selectedOption) {
+        window.location.href = selectedOption;
+        dropdown.selectedIndex = 0; 
+      }
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>member list</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ <nav class="navbar">
+    <img src="images/logo.png"width="100px";height="100px;">
+    <h1>Library Management System</h1>
+    <button><a href="index.html">Back</a></button>
+</nav>
+
+<table border="1" id="myTable">
+  
+  <thead class>
+    <tr class="row">
+      <th>Book No</th>
+      <th>Book Name</th>
+      <th>Author name</th>
+      <th>Member Details</th>
+      <th>Issue Date</th>
+      <th>Received Date</th>
+    </tr>
+  </thead>
+  <tbody id="tableBody">
+    
+  </tbody>
+</table>
+</body>
+</html>
+
+<style>
+    #myTable{
+        text-align: center;
+        height:600px;
+        width:1300px;
+        /* background-color: rgba(238, 220, 219, 0.019); */
+        border-radius: 15px;
+        color: rgb(52, 226, 43);
+        margin-top: 100px;
+        margin-left: 300px;
+        padding:20px;
+      border-collapse: separate;
+      border-spacing: 5px; 
+      background-color: grey;
+
+    }
+    #myTable th,td{
+        border: 2px solid black;
+        border-radius: 15px;
+
+    }
+    .row{
+        margin-bottom: 15px;
+    }
+    .row th{
+        font-size: 25px;
+        border:2px solid #000000;
+        border-radius: 10px;
+        padding:10px;
+        color: rgb(128, 0, 109);
+        margin-bottom: 10px;
+    }
+    #tableBody{
+        font-size: 21px;
+        color: rgb(226, 89, 43);
+        border:1px solid grey;
+        border-radius: 10px;
+        color: white;
+    }
+    
+</style>
+
+<script>
+var data = [
+  ["3451","One Indian Girl", "chetan Bhagat", "110","07.01.2024","23.01.2024"],
+  ["3432", "Making India Awesome", "chetan Bhagat", "111","08.01.2024","24.01.2024"],
+  ["3543", "Revolution 2020","chetan Bhagat", "112","09.01.2024","25.01.2024"],
+  ["3454", "Naked Triangle","Balwant Gargi", "113", "09.01.2024","25.01.2024"],
+  ["3455","A Million Mutinies Now", "V.S. Naipaul", "114","11.01.2024","27.01.2024"],
+  ["3956","Moral stories", "V.S. Naipaul", "115", "13.01.2024","29.01.2024"],
+  ["3567","A Million Mutinies Now 	","satish Gujart", "116","14.01.2024","30.01.2024"],
+  ["3628", "A Bend in the River","V.S. Naipaul", "116", "15.01.2024","1.02.2024"],
+  ["3569","A Passage to England", "Nirad C.chaudhuri", "117","16.01.2024","2.02.2024"],
+  ["3570", "A River Sutra","Gita Mehta", "118", "17.01.2024","3.02.2024"],
+  
+];
+
+var tableBody = document.getElementById('tableBody');
+
+for (var i = 0; i < data.length; i++) {
+  var row = tableBody.insertRow(i);
+for (var j = 0; j < data[i].length; j++) {
+    var cell = row.insertCell(j);
+    cell.innerHTML = data[i][j];
+  }
+}
+</script>
